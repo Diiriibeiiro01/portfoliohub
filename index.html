@@ -619,13 +619,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--bg-0);
       flex-shrink: 0;
       box-shadow: 0 0 80px rgba(255, 23, 68, 0.7);
       animation: float-transcendental 4s ease-in-out infinite;
       border: 3px solid rgba(255, 255, 255, 0.25);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @keyframes float-transcendental {
@@ -1090,7 +1094,9 @@
     <div class="container">
       <h2 class="section-title" data-pt="sobre mim" data-en="about me">sobre mim</h2>
       <div class="about">
-        <div class="avatar">MV</div>
+        <div class="avatar">
+          <img src="profile.jpg" alt="Mateus Vinicius">
+        </div>
         <div class="about-text">
           <h3>Mateus Vinicius</h3>
           <p data-pt="Estudante de Engenharia de Software em Brasília-DF, com experiência prática em monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web, segurança da informação e inteligência artificial — áreas que estudo e aplico em projetos pessoais e acadêmicos." data-en="Software Engineering student in Brasília-DF, with practical experience in monitoring solar energy systems. I'm interested in web development, information security and artificial intelligence — areas I study and apply in personal and academic projects.">Estudante de Engenharia de Software em Brasília-DF, com experiência prática em monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web, segurança da informação e inteligência artificial — áreas que estudo e aplico em projetos pessoais e acadêmicos.</p>
