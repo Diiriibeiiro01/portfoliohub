@@ -17,8 +17,9 @@
     }
 
     :root {
+      --red: #ff1744;
+      --red-dark: #d81b3f;
       --cyan: #00d9ff;
-      --purple: #7f39fb;
       --pink: #ec4899;
       --blue: #3b82f6;
       --bg-0: #0a0e27;
@@ -41,6 +42,7 @@
       background: var(--bg-0);
       overflow-x: hidden;
       position: relative;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23ff1744" opacity="0.8"/><circle cx="16" cy="16" r="10" fill="none" stroke="%23ff1744" stroke-width="1" opacity="0.5"/></svg>') 16 16, auto;
     }
 
     body::before {
@@ -51,8 +53,8 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(127, 57, 251, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 10% 20%, rgba(255, 23, 68, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 23, 68, 0.18) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.12) 0%, transparent 60%),
         radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
       pointer-events: none;
@@ -84,8 +86,8 @@
       z-index: 100;
       background: rgba(10, 14, 39, 0.4);
       backdrop-filter: blur(40px);
-      border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-      box-shadow: 0 0 60px rgba(0, 217, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 23, 68, 0.2);
+      box-shadow: 0 0 60px rgba(255, 23, 68, 0.15);
     }
 
     .nav-inner {
@@ -98,17 +100,18 @@
     .logo {
       font-size: 24px;
       font-weight: 900;
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 33%, #ec4899 66%, #ff006e 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -1px;
-      filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.5));
+      filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.5));
     }
 
     .nav-links {
       display: flex;
       gap: 40px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -121,8 +124,28 @@
     }
 
     .nav-links a:hover { 
-      color: var(--cyan);
-      text-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+      color: var(--red);
+      text-shadow: 0 0 20px rgba(255, 23, 68, 0.8);
+    }
+
+    .lang-toggle {
+      background: none;
+      border: 2px solid rgba(255, 23, 68, 0.4);
+      color: var(--red);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .lang-toggle:hover {
+      border-color: var(--red);
+      background: rgba(255, 23, 68, 0.15);
+      box-shadow: 0 0 30px rgba(255, 23, 68, 0.5);
     }
 
     .aura-toggle {
@@ -130,21 +153,21 @@
       border: none;
       font-size: 24px;
       cursor: pointer;
-      color: var(--cyan);
+      color: var(--red);
       padding: 8px 16px;
       transition: all 0.3s ease;
-      filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.4));
+      filter: drop-shadow(0 0 15px rgba(255, 23, 68, 0.4));
       margin-right: 12px;
     }
 
     .aura-toggle:hover {
       transform: scale(1.2) rotate(-15deg);
-      filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.8));
+      filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.8));
     }
 
     .aura-toggle.aura-active {
       animation: aura-bolt-pulse 0.5s ease-in-out;
-      filter: drop-shadow(0 0 60px rgba(0, 217, 255, 1));
+      filter: drop-shadow(0 0 60px rgba(255, 23, 68, 1));
     }
 
     @keyframes aura-bolt-pulse {
@@ -158,14 +181,14 @@
       border: none;
       font-size: 24px;
       cursor: pointer;
-      color: var(--cyan);
+      color: var(--red);
       padding: 8px;
     }
 
     .mobile-menu {
       display: none;
       flex-direction: column;
-      border-top: 1px solid rgba(0, 217, 255, 0.15);
+      border-top: 1px solid rgba(255, 23, 68, 0.15);
       padding: 8px 0;
       background: rgba(10, 14, 39, 0.95);
     }
@@ -199,12 +222,12 @@
     }
 
     .hero h1 .highlight { 
-      background: linear-gradient(90deg, #00d9ff 0%, #7f39fb 25%, #ec4899 50%, #ff006e 75%, #00d9ff 100%);
+      background: linear-gradient(90deg, #ff1744 0%, #ff5252 25%, #ff6e40 50%, #ff1744 75%, #ff1744 100%);
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.5));
+      filter: drop-shadow(0 0 40px rgba(255, 23, 68, 0.5));
       animation: highlight-liquid 6s ease-in-out infinite;
     }
 
@@ -217,32 +240,32 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: rgba(0, 217, 255, 0.12);
-      color: var(--cyan);
+      background: rgba(255, 23, 68, 0.12);
+      color: var(--red);
       font-size: 12px;
       padding: 14px 24px;
       border-radius: 50px;
       margin-bottom: 32px;
       font-weight: 900;
-      border: 1.5px solid rgba(0, 217, 255, 0.4);
+      border: 1.5px solid rgba(255, 23, 68, 0.4);
       text-transform: uppercase;
       letter-spacing: 2px;
-      box-shadow: 0 0 50px rgba(0, 217, 255, 0.4);
+      box-shadow: 0 0 50px rgba(255, 23, 68, 0.4);
       animation: tag-energy-pulse 1.5s ease-in-out infinite;
     }
 
     @keyframes tag-energy-pulse {
-      0%, 100% { box-shadow: 0 0 50px rgba(0, 217, 255, 0.4); }
-      50% { box-shadow: 0 0 80px rgba(0, 217, 255, 0.7); }
+      0%, 100% { box-shadow: 0 0 50px rgba(255, 23, 68, 0.4); }
+      50% { box-shadow: 0 0 80px rgba(255, 23, 68, 0.7); }
     }
 
     .hero-tag .dot {
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--cyan);
+      background: var(--red);
       animation: pulse-energy 1.2s ease-in-out infinite;
-      box-shadow: 0 0 30px rgba(0, 217, 255, 1);
+      box-shadow: 0 0 30px rgba(255, 23, 68, 1);
     }
 
     @keyframes pulse-energy {
@@ -280,24 +303,24 @@
       flex-direction: column;
       gap: 12px;
       background: rgba(15, 22, 41, 0.3);
-      border: 2px solid rgba(0, 217, 255, 0.25);
+      border: 2px solid rgba(255, 23, 68, 0.25);
       border-radius: var(--radius);
       padding: 28px;
       backdrop-filter: blur(30px);
       transition: all 0.4s ease;
-      box-shadow: 0 0 50px rgba(0, 217, 255, 0.15);
+      box-shadow: 0 0 50px rgba(255, 23, 68, 0.15);
     }
 
     .hero-card:hover {
       transform: translateY(-12px) scale(1.08);
-      border-color: rgba(0, 217, 255, 0.8);
-      box-shadow: 0 0 100px rgba(0, 217, 255, 0.5);
+      border-color: rgba(255, 23, 68, 0.8);
+      box-shadow: 0 0 100px rgba(255, 23, 68, 0.5);
     }
 
     .hero-card i { 
       font-size: 36px;
       margin-bottom: 8px;
-      filter: drop-shadow(0 0 20px rgba(0, 217, 255, 0.5));
+      filter: drop-shadow(0 0 20px rgba(255, 23, 68, 0.5));
     }
 
     .card-label { 
@@ -325,9 +348,9 @@
       font-size: 13px;
       padding: 12px 24px;
       border-radius: 50px;
-      background: rgba(0, 217, 255, 0.1);
+      background: rgba(255, 23, 68, 0.1);
       color: var(--text-secondary);
-      border: 2px solid rgba(0, 217, 255, 0.3);
+      border: 2px solid rgba(255, 23, 68, 0.3);
       font-weight: 900;
       transition: all 0.3s ease;
       text-transform: uppercase;
@@ -337,22 +360,22 @@
 
     .skill:hover {
       transform: translateY(-5px) scale(1.15);
-      border-color: var(--cyan);
-      background: rgba(0, 217, 255, 0.25);
-      color: var(--cyan);
-      box-shadow: 0 0 60px rgba(0, 217, 255, 0.6);
+      border-color: var(--red);
+      background: rgba(255, 23, 68, 0.25);
+      color: var(--red);
+      box-shadow: 0 0 60px rgba(255, 23, 68, 0.6);
     }
 
     .skill.solar {
-      background: rgba(236, 72, 153, 0.12);
-      color: var(--pink);
-      border-color: rgba(236, 72, 153, 0.35);
+      background: rgba(255, 23, 68, 0.12);
+      color: var(--red);
+      border-color: rgba(255, 23, 68, 0.35);
     }
 
     .skill.solar:hover {
-      border-color: var(--pink);
-      background: rgba(236, 72, 153, 0.3);
-      box-shadow: 0 0 60px rgba(236, 72, 153, 0.7);
+      border-color: var(--red);
+      background: rgba(255, 23, 68, 0.3);
+      box-shadow: 0 0 60px rgba(255, 23, 68, 0.7);
     }
 
     .hero-btns {
@@ -362,7 +385,7 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 50%, #ec4899 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
       color: var(--bg-0);
       padding: 20px 44px;
       border-radius: var(--radius);
@@ -371,14 +394,14 @@
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
-      box-shadow: 0 0 60px rgba(0, 217, 255, 0.6);
+      box-shadow: 0 0 60px rgba(255, 23, 68, 0.6);
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
     .btn-primary:hover { 
       transform: translateY(-6px) scale(1.08);
-      box-shadow: 0 0 120px rgba(0, 217, 255, 1);
+      box-shadow: 0 0 120px rgba(255, 23, 68, 1);
     }
 
     .btn-secondary {
@@ -388,7 +411,7 @@
       border-radius: var(--radius);
       font-size: 15px;
       font-weight: 900;
-      border: 2px solid rgba(0, 217, 255, 0.5);
+      border: 2px solid rgba(255, 23, 68, 0.5);
       transition: all 0.3s ease;
       cursor: pointer;
       text-transform: uppercase;
@@ -396,17 +419,17 @@
     }
 
     .btn-secondary:hover { 
-      background: rgba(0, 217, 255, 0.2);
-      border-color: var(--cyan);
+      background: rgba(255, 23, 68, 0.2);
+      border-color: var(--red);
       transform: translateY(-6px);
-      box-shadow: 0 0 100px rgba(0, 217, 255, 0.5);
-      color: var(--cyan);
+      box-shadow: 0 0 100px rgba(255, 23, 68, 0.5);
+      color: var(--red);
     }
 
     .stats {
       background: linear-gradient(180deg, rgba(15, 22, 41, 0.7) 0%, rgba(10, 14, 39, 0.7) 100%);
-      border-bottom: 1px solid rgba(0, 217, 255, 0.2);
-      border-top: 1px solid rgba(0, 217, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 23, 68, 0.2);
+      border-top: 1px solid rgba(255, 23, 68, 0.2);
     }
 
     .stats-grid {
@@ -419,7 +442,7 @@
       flex-direction: column;
       align-items: center;
       padding: 56px 16px;
-      border-right: 1px solid rgba(0, 217, 255, 0.2);
+      border-right: 1px solid rgba(255, 23, 68, 0.2);
     }
 
     .stat:last-child { border-right: none; }
@@ -427,7 +450,7 @@
     .stat-n {
       font-size: 54px;
       font-weight: 900;
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 50%, #ec4899 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -444,7 +467,7 @@
 
     .section {
       padding: 120px 0;
-      border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 23, 68, 0.2);
     }
 
     .section-alt { 
@@ -468,18 +491,18 @@
 
     .proj-card {
       background: rgba(15, 22, 41, 0.35);
-      border: 2px solid rgba(0, 217, 255, 0.3);
+      border: 2px solid rgba(255, 23, 68, 0.3);
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: all 0.4s ease;
       backdrop-filter: blur(30px);
-      box-shadow: 0 0 50px rgba(0, 217, 255, 0.15);
+      box-shadow: 0 0 50px rgba(255, 23, 68, 0.15);
     }
 
     .proj-card:hover {
-      border-color: rgba(0, 217, 255, 0.8);
+      border-color: rgba(255, 23, 68, 0.8);
       transform: translateY(-20px) scale(1.05);
-      box-shadow: 0 0 120px rgba(0, 217, 255, 0.4);
+      box-shadow: 0 0 120px rgba(255, 23, 68, 0.4);
     }
 
     .proj-thumb {
@@ -487,12 +510,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(127, 57, 251, 0.15) 100%);
+      background: linear-gradient(135deg, rgba(255, 23, 68, 0.15) 0%, rgba(255, 23, 68, 0.15) 100%);
     }
 
     .proj-thumb i { 
       font-size: 60px;
-      filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.6));
+      filter: drop-shadow(0 0 30px rgba(255, 23, 68, 0.6));
     }
 
     .proj-info { padding: 28px; }
@@ -527,9 +550,9 @@
       transition: all 0.3s ease;
       text-transform: uppercase;
       border: 1.5px solid;
-      background: rgba(0, 217, 255, 0.15);
-      color: var(--cyan);
-      border-color: rgba(0, 217, 255, 0.3);
+      background: rgba(255, 23, 68, 0.15);
+      color: var(--red);
+      border-color: rgba(255, 23, 68, 0.3);
     }
 
     .tag:hover {
@@ -539,7 +562,7 @@
 
     .proj-link {
       font-size: 13px;
-      color: var(--cyan);
+      color: var(--red);
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -549,7 +572,7 @@
 
     .proj-link:hover { 
       gap: 16px;
-      filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.8));
+      filter: drop-shadow(0 0 25px rgba(255, 23, 68, 0.8));
     }
 
     .about {
@@ -562,7 +585,7 @@
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 33%, #ec4899 66%, #ff006e 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -570,7 +593,7 @@
       font-weight: 900;
       color: var(--bg-0);
       flex-shrink: 0;
-      box-shadow: 0 0 80px rgba(0, 217, 255, 0.7);
+      box-shadow: 0 0 80px rgba(255, 23, 68, 0.7);
       animation: float-transcendental 4s ease-in-out infinite;
       border: 3px solid rgba(255, 255, 255, 0.25);
     }
@@ -614,7 +637,7 @@
       gap: 14px;
       padding: 18px 36px;
       border-radius: var(--radius);
-      border: 2px solid rgba(0, 217, 255, 0.5);
+      border: 2px solid rgba(255, 23, 68, 0.5);
       background: rgba(15, 22, 41, 0.4);
       font-size: 14px;
       color: var(--text-primary);
@@ -626,17 +649,17 @@
     }
 
     .contact-btn:hover {
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 100%);
       color: var(--bg-0);
-      border-color: var(--cyan);
+      border-color: var(--red);
       transform: translateY(-8px) scale(1.12);
-      box-shadow: 0 0 100px rgba(0, 217, 255, 0.7);
+      box-shadow: 0 0 100px rgba(255, 23, 68, 0.7);
     }
 
     .footer {
       padding: 48px 0;
       background: linear-gradient(180deg, rgba(15, 22, 41, 0.7) 0%, rgba(10, 14, 39, 0.95) 100%);
-      border-top: 1px solid rgba(0, 217, 255, 0.2);
+      border-top: 1px solid rgba(255, 23, 68, 0.2);
     }
 
     .footer .container {
@@ -659,9 +682,9 @@
     }
 
     .footer a:hover { 
-      color: var(--cyan);
+      color: var(--red);
       gap: 18px;
-      filter: drop-shadow(0 0 25px rgba(0, 217, 255, 0.6));
+      filter: drop-shadow(0 0 25px rgba(255, 23, 68, 0.6));
     }
 
     /* ===========================
@@ -753,15 +776,38 @@
       font-weight: 900;
       color: var(--text-primary);
       text-align: center;
-      background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 33%, #ec4899 66%, #ff006e 100%);
+      background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-transform: uppercase;
       letter-spacing: 3px;
-      filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 80px rgba(127, 57, 251, 0.6));
+      filter: drop-shadow(0 0 40px rgba(255, 23, 68, 0.8)) drop-shadow(0 0 80px rgba(255, 23, 68, 0.6));
       animation: message-pop 3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
       line-height: 1.2;
+    }
+
+    @keyframes message-pop {
+      0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+      }
+      20% {
+        opacity: 1;
+        transform: scale(1.2) rotate(10deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      80% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-100px);
+      }
     }
 
     /* ===========================
@@ -800,11 +846,11 @@
       height: 300px;
       border-radius: 50%;
       box-shadow: 
-        0 0 80px rgba(0, 217, 255, 1),
-        0 0 160px rgba(127, 57, 251, 0.8),
-        0 0 240px rgba(236, 72, 153, 0.6),
-        inset 0 0 60px rgba(0, 217, 255, 0.4);
-      border: 4px solid rgba(0, 217, 255, 0.8);
+        0 0 80px rgba(255, 23, 68, 1),
+        0 0 160px rgba(255, 23, 68, 0.8),
+        0 0 240px rgba(255, 23, 68, 0.6),
+        inset 0 0 60px rgba(255, 23, 68, 0.4);
+      border: 4px solid rgba(255, 23, 68, 0.8);
       animation: gif-pulse 1.5s ease-in-out infinite;
     }
 
@@ -812,41 +858,18 @@
       0%, 100% {
         transform: scale(1);
         box-shadow: 
-          0 0 80px rgba(0, 217, 255, 1),
-          0 0 160px rgba(127, 57, 251, 0.8),
-          0 0 240px rgba(236, 72, 153, 0.6),
-          inset 0 0 60px rgba(0, 217, 255, 0.4);
+          0 0 80px rgba(255, 23, 68, 1),
+          0 0 160px rgba(255, 23, 68, 0.8),
+          0 0 240px rgba(255, 23, 68, 0.6),
+          inset 0 0 60px rgba(255, 23, 68, 0.4);
       }
       50% {
         transform: scale(1.15);
         box-shadow: 
-          0 0 120px rgba(0, 217, 255, 1),
-          0 0 200px rgba(127, 57, 251, 1),
-          0 0 300px rgba(236, 72, 153, 0.8),
-          inset 0 0 80px rgba(0, 217, 255, 0.6);
-      }
-    }
-
-    @keyframes message-pop {
-      0% {
-        opacity: 0;
-        transform: scale(0) rotate(-180deg);
-      }
-      20% {
-        opacity: 1;
-        transform: scale(1.2) rotate(10deg);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-      }
-      80% {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(0.5) translateY(-100px);
+          0 0 120px rgba(255, 23, 68, 1),
+          0 0 200px rgba(255, 23, 68, 1),
+          0 0 300px rgba(255, 23, 68, 0.8),
+          inset 0 0 80px rgba(255, 23, 68, 0.6);
       }
     }
 
@@ -868,6 +891,13 @@
         height: 200px;
       }
     }
+
+    /* ===========================
+       PONTEIRO PERSONALIZADO
+    =========================== */
+    a, button, .skill, .contact-btn {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%23ff1744" opacity="0.9"/><circle cx="16" cy="16" r="12" fill="none" stroke="%23ff1744" stroke-width="1.5" opacity="0.6"/></svg>') 16 16, pointer;
+    }
   </style>
 </head>
 <body>
@@ -877,10 +907,11 @@
     <div class="container nav-inner">
       <a href="#" class="logo">Portfolio<span>HUB</span></a>
       <nav class="nav-links">
-        <a href="#projetos">projetos</a>
-        <a href="#sobre">sobre</a>
-        <a href="#contato">contato</a>
+        <a href="#projetos" data-pt="projetos" data-en="projects">projetos</a>
+        <a href="#sobre" data-pt="sobre" data-en="about">sobre</a>
+        <a href="#contato" data-pt="contato" data-en="contact">contato</a>
       </nav>
+      <button class="lang-toggle" id="langToggle" data-pt="EN" data-en="PT">EN</button>
       <button class="aura-toggle" id="auraBtn" aria-label="Ativar Aura Máxima" title="Aura Nível 67">
         <i class="ti ti-bolt"></i>
       </button>
@@ -889,9 +920,9 @@
       </button>
     </div>
     <nav class="mobile-menu" id="mobileMenu">
-      <a href="#projetos" onclick="closeMenu()">projetos</a>
-      <a href="#sobre" onclick="closeMenu()">sobre</a>
-      <a href="#contato" onclick="closeMenu()">contato</a>
+      <a href="#projetos" onclick="closeMenu()" data-pt="projetos" data-en="projects">projetos</a>
+      <a href="#sobre" onclick="closeMenu()" data-pt="sobre" data-en="about">sobre</a>
+      <a href="#contato" onclick="closeMenu()" data-pt="contato" data-en="contact">contato</a>
     </nav>
   </header>
 
@@ -900,33 +931,29 @@
     <div class="container">
       <div class="hero-tag">
         <span class="dot"></span>
-        disponível para estágio
+        <span data-pt="disponível para estágio" data-en="available for internship">disponível para estágio</span>
       </div>
-      <h1>Olá, sou <span class="highlight">Mateus Vinicius</span> 👋</h1>
+      <h1><span data-pt="Olá, sou" data-en="Hi, I'm">Olá, sou</span> <span class="highlight">Mateus Vinicius</span> 👋</h1>
       <p class="hero-sub">
         <i class="ti ti-school"></i>
-        Estudante de Engenharia de Software
+        <span data-pt="Estudante de Engenharia de Software" data-en="Software Engineering Student">Estudante de Engenharia de Software</span>
       </p>
-      <p class="hero-desc">
-        Apaixonado por tecnologia e sustentabilidade. Trabalho com monitoramento de energia solar
-        e estou em busca de oportunidades para unir minha experiência no setor energético
-        com o desenvolvimento de soluções digitais inovadoras.
-      </p>
+      <p class="hero-desc" data-pt="Apaixonado por tecnologia e sustentabilidade. Trabalho com monitoramento de energia solar e estou em busca de oportunidades para unir minha experiência no setor energético com o desenvolvimento de soluções digitais inovadoras." data-en="Passionate about technology and sustainability. I work with solar energy monitoring and am looking for opportunities to combine my experience in the energy sector with the development of innovative digital solutions.">Apaixonado por tecnologia e sustentabilidade. Trabalho com monitoramento de energia solar e estou em busca de oportunidades para unir minha experiência no setor energético com o desenvolvimento de soluções digitais inovadoras.</p>
 
       <div class="hero-cards">
         <div class="hero-card">
-          <i class="ti ti-map-pin" style="color:#7F77DD"></i>
-          <span class="card-label">localização</span>
+          <i class="ti ti-map-pin" style="color:#ff1744"></i>
+          <span class="card-label" data-pt="localização" data-en="location">localização</span>
           <span class="card-value">Brasília, DF</span>
         </div>
         <div class="hero-card">
-          <i class="ti ti-solar-panel" style="color:#BA7517"></i>
-          <span class="card-label">área de atuação</span>
-          <span class="card-value">Energia Solar</span>
+          <i class="ti ti-solar-panel" style="color:#ff1744"></i>
+          <span class="card-label" data-pt="área de atuação" data-en="field">área de atuação</span>
+          <span class="card-value" data-pt="Energia Solar" data-en="Solar Energy">Energia Solar</span>
         </div>
         <div class="hero-card">
-          <i class="ti ti-rocket" style="color:#1D9E75"></i>
-          <span class="card-label">disponibilidade</span>
+          <i class="ti ti-rocket" style="color:#ff1744"></i>
+          <span class="card-label" data-pt="disponibilidade" data-en="availability">disponibilidade</span>
           <span class="card-value">Estágio CLT/PJ</span>
         </div>
       </div>
@@ -942,8 +969,8 @@
       </div>
 
       <div class="hero-btns">
-        <a href="#projetos" class="btn-primary">ver projetos</a>
-        <a href="#contato" class="btn-secondary">entrar em contato</a>
+        <a href="#projetos" class="btn-primary" data-pt="ver projetos" data-en="view projects">ver projetos</a>
+        <a href="#contato" class="btn-secondary" data-pt="entrar em contato" data-en="get in touch">entrar em contato</a>
       </div>
     </div>
   </section>
@@ -953,15 +980,15 @@
     <div class="container stats-grid">
       <div class="stat">
         <span class="stat-n" id="countProjetos">0</span>
-        <span class="stat-l">projetos</span>
+        <span class="stat-l" data-pt="projetos" data-en="projects">projetos</span>
       </div>
       <div class="stat">
         <span class="stat-n" id="countTechs">0</span>
-        <span class="stat-l">tecnologias</span>
+        <span class="stat-l" data-pt="tecnologias" data-en="technologies">tecnologias</span>
       </div>
       <div class="stat">
         <span class="stat-n">2026</span>
-        <span class="stat-l">em formação</span>
+        <span class="stat-l" data-pt="em formação" data-en="in formation">em formação</span>
       </div>
     </div>
   </section>
@@ -969,57 +996,57 @@
   <!-- PROJETOS -->
   <section class="section" id="projetos">
     <div class="container">
-      <h2 class="section-title">projetos em destaque</h2>
+      <h2 class="section-title" data-pt="projetos em destaque" data-en="featured projects">projetos em destaque</h2>
       <div class="proj-grid">
 
         <div class="proj-card">
-          <div class="proj-thumb purple">
+          <div class="proj-thumb">
             <i class="ti ti-code"></i>
           </div>
           <div class="proj-info">
             <h3 class="proj-name">PortfolioHUB</h3>
-            <p class="proj-type">Aplicação Web</p>
+            <p class="proj-type" data-pt="Aplicação Web" data-en="Web Application">Aplicação Web</p>
             <div class="proj-tags">
               <span class="tag">HTML</span>
               <span class="tag">CSS</span>
               <span class="tag">GitHub</span>
             </div>
             <a href="https://github.com/diiriibeiiro01/portfoliohub" target="_blank" class="proj-link">
-              <i class="ti ti-brand-github"></i> ver no GitHub
+              <i class="ti ti-brand-github"></i> <span data-pt="ver no GitHub" data-en="view on GitHub">ver no GitHub</span>
             </a>
           </div>
         </div>
 
         <div class="proj-card">
-          <div class="proj-thumb amber">
+          <div class="proj-thumb">
             <i class="ti ti-solar-panel"></i>
           </div>
           <div class="proj-info">
             <h3 class="proj-name">Monitor Solar</h3>
-            <p class="proj-type">Monitoramento de Energia</p>
+            <p class="proj-type" data-pt="Monitoramento de Energia" data-en="Energy Monitoring">Monitoramento de Energia</p>
             <div class="proj-tags">
               <span class="tag">IoT</span>
-              <span class="tag">Dados</span>
+              <span class="tag" data-pt="Dados" data-en="Data">Dados</span>
             </div>
             <a href="#" class="proj-link">
-              <i class="ti ti-brand-github"></i> ver no GitHub
+              <i class="ti ti-brand-github"></i> <span data-pt="ver no GitHub" data-en="view on GitHub">ver no GitHub</span>
             </a>
           </div>
         </div>
 
         <div class="proj-card">
-          <div class="proj-thumb coral">
+          <div class="proj-thumb">
             <i class="ti ti-school"></i>
           </div>
           <div class="proj-info">
-            <h3 class="proj-name">Projeto Acadêmico</h3>
-            <p class="proj-type">Eng. de Software</p>
+            <h3 class="proj-name" data-pt="Projeto Acadêmico" data-en="Academic Project">Projeto Acadêmico</h3>
+            <p class="proj-type" data-pt="Eng. de Software" data-en="Software Engineering">Eng. de Software</p>
             <div class="proj-tags">
-              <span class="tag">Pesquisa</span>
+              <span class="tag" data-pt="Pesquisa" data-en="Research">Pesquisa</span>
               <span class="tag">Docs</span>
             </div>
             <a href="#" class="proj-link">
-              <i class="ti ti-brand-github"></i> ver no GitHub
+              <i class="ti ti-brand-github"></i> <span data-pt="ver no GitHub" data-en="view on GitHub">ver no GitHub</span>
             </a>
           </div>
         </div>
@@ -1031,22 +1058,13 @@
   <!-- SOBRE -->
   <section class="section section-alt" id="sobre">
     <div class="container">
-      <h2 class="section-title">sobre mim</h2>
+      <h2 class="section-title" data-pt="sobre mim" data-en="about me">sobre mim</h2>
       <div class="about">
         <div class="avatar">MV</div>
         <div class="about-text">
           <h3>Mateus Vinicius</h3>
-          <p>
-            Estudante de Engenharia de Software em Brasília-DF, com experiência prática em
-            monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web,
-            segurança da informação e inteligência artificial — áreas que estudo e aplico
-            em projetos pessoais e acadêmicos.
-          </p>
-          <p>
-            Atualmente utilizo ferramentas como Git, GitHub e Google Gemini para organizar
-            e potencializar meus projetos. Busco minha primeira oportunidade de estágio para
-            crescer profissionalmente e contribuir com equipes inovadoras.
-          </p>
+          <p data-pt="Estudante de Engenharia de Software em Brasília-DF, com experiência prática em monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web, segurança da informação e inteligência artificial — áreas que estudo e aplico em projetos pessoais e acadêmicos." data-en="Software Engineering student in Brasília-DF, with practical experience in monitoring solar energy systems. I'm interested in web development, information security and artificial intelligence — areas I study and apply in personal and academic projects.">Estudante de Engenharia de Software em Brasília-DF, com experiência prática em monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web, segurança da informação e inteligência artificial — áreas que estudo e aplico em projetos pessoais e acadêmicos.</p>
+          <p data-pt="Atualmente utilizo ferramentas como Git, GitHub e Google Gemini para organizar e potencializar meus projetos. Busco minha primeira oportunidade de estágio para crescer profissionalmente e contribuir com equipes inovadoras." data-en="I currently use tools like Git, GitHub and Google Gemini to organize and enhance my projects. I'm looking for my first internship opportunity to grow professionally and contribute to innovative teams.">Atualmente utilizo ferramentas como Git, GitHub e Google Gemini para organizar e potencializar meus projetos. Busco minha primeira oportunidade de estágio para crescer profissionalmente e contribuir com equipes inovadoras.</p>
           <div class="skills-row" style="margin-top: 16px;">
             <span class="skill solar">Energia Solar</span>
             <span class="skill solar">Monitoramento</span>
@@ -1055,7 +1073,7 @@
             <span class="skill">Git &amp; GitHub</span>
             <span class="skill">Google Gemini</span>
             <span class="skill">Eng. de Software</span>
-            <span class="skill">Segurança</span>
+            <span class="skill" data-pt="Segurança" data-en="Security">Segurança</span>
           </div>
         </div>
       </div>
@@ -1065,8 +1083,8 @@
   <!-- CONTATO -->
   <section class="section" id="contato">
     <div class="container">
-      <h2 class="section-title">contato</h2>
-      <p class="contact-desc">Quer conversar sobre projetos, estágio ou só trocar uma ideia? Me chama!</p>
+      <h2 class="section-title" data-pt="contato" data-en="contact">contato</h2>
+      <p class="contact-desc" data-pt="Quer conversar sobre projetos, estágio ou só trocar uma ideia? Me chama!" data-en="Want to talk about projects, internship or just exchange ideas? Hit me up!">Quer conversar sobre projetos, estágio ou só trocar uma ideia? Me chama!</p>
       <div class="contact-row">
         <a href="https://github.com/diiriibeiiro01" target="_blank" class="contact-btn">
           <i class="ti ti-brand-github"></i> GitHub
@@ -1081,14 +1099,55 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <span>PortfolioHUB · Mateus Vinicius · Brasília, DF · 2026</span>
+      <span data-pt="PortfolioHUB · Mateus Vinicius · Brasília, DF · 2026" data-en="PortfolioHUB · Mateus Vinicius · Brasília, DF · 2026">PortfolioHUB · Mateus Vinicius · Brasília, DF · 2026</span>
       <a href="https://github.com/diiriibeiiro01/portfoliohub" target="_blank">
-        <i class="ti ti-brand-github"></i> ver no GitHub
+        <i class="ti ti-brand-github"></i> <span data-pt="ver no GitHub" data-en="view on GitHub">ver no GitHub</span>
       </a>
     </div>
   </footer>
 
   <script>
+    // ===========================
+    // SISTEMA DE TRADUÇÃO
+    // ===========================
+    let currentLang = 'pt';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      localStorage.setItem('language', currentLang);
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const elements = document.querySelectorAll('[data-pt][data-en]');
+      elements.forEach(el => {
+        if (currentLang === 'pt') {
+          el.textContent = el.getAttribute('data-pt');
+        } else {
+          el.textContent = el.getAttribute('data-en');
+        }
+      });
+
+      const langToggle = document.getElementById('langToggle');
+      if (langToggle) {
+        langToggle.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+      }
+
+      document.documentElement.lang = currentLang;
+    }
+
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', toggleLanguage);
+    }
+
+    // Carregar idioma salvo
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+      currentLang = savedLang;
+      updateLanguage();
+    }
+
     // Menu mobile
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -1107,29 +1166,21 @@
     // AURA LEVEL 67 - SOBRECARGA
     // ===========================
     const auraBtn = document.getElementById('auraBtn');
-    let auraActive = false;
+    window.auraActive = false;
 
     if (auraBtn) {
       auraBtn.addEventListener('click', () => {
-        auraActive = !auraActive;
+        window.auraActive = !window.auraActive;
         
-        if (auraActive) {
+        if (window.auraActive) {
           document.body.classList.add('aura-level-67');
           auraBtn.classList.add('aura-active');
           
-          // Efeito visual de ativação
           createAuraExplosion();
-          
-          // Fogos de artifício
           createFireworks();
-          
-          // Mensagem de vitória
           showAuraMessage();
-          
-          // Mostrar GIF do 67
           showAuraGif();
           
-          // Vibração do dispositivo
           if (navigator.vibrate) {
             navigator.vibrate([100, 50, 100, 50, 200, 50, 100]);
           }
@@ -1149,41 +1200,34 @@
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(0, 217, 255, 0.8), transparent);
-        box-shadow: 0 0 100px rgba(0, 217, 255, 1), 0 0 200px rgba(127, 57, 251, 0.8);
+        background: radial-gradient(circle, rgba(255, 23, 68, 0.8), transparent);
+        box-shadow: 0 0 100px rgba(255, 23, 68, 1), 0 0 200px rgba(255, 23, 68, 0.8);
         transform: translate(-50%, -50%);
         pointer-events: none;
         z-index: 999;
         animation: explosion-burst 1s ease-out forwards;
       `;
       document.body.appendChild(explosion);
-      
       setTimeout(() => explosion.remove(), 1000);
     }
 
     function createFireworks() {
-      const colors = ['#00d9ff', '#7f39fb', '#ec4899', '#ff006e', '#00ff88'];
-      
+      const colors = ['#ff1744', '#ff5252', '#ff6e40'];
       for (let i = 0; i < 50; i++) {
         setTimeout(() => {
           const firework = document.createElement('div');
           firework.className = 'firework';
-          
           const x = Math.random() * window.innerWidth;
           const y = Math.random() * window.innerHeight * 0.6;
-          
           firework.style.left = x + 'px';
           firework.style.top = y + 'px';
           firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
           firework.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
           firework.style.setProperty('--ty', (Math.random() * 200 - 100) + 'px');
-          
           document.body.appendChild(firework);
-          
           setTimeout(() => firework.remove(), 1500);
         }, i * 50);
       }
-      
       for (let i = 0; i < 3; i++) {
         setTimeout(() => createCentralFirework(), i * 300);
       }
@@ -1192,25 +1236,20 @@
     function createCentralFirework() {
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 3;
-      const colors = ['#00d9ff', '#7f39fb', '#ec4899', '#ff006e'];
-      
+      const colors = ['#ff1744', '#ff5252', '#ff6e40'];
       for (let i = 0; i < 30; i++) {
         const firework = document.createElement('div');
         firework.className = 'firework-burst';
-        
         const angle = (i / 30) * Math.PI * 2;
         const distance = 200;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
-        
         firework.style.left = centerX + 'px';
         firework.style.top = centerY + 'px';
         firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         firework.style.setProperty('--tx', (x - centerX) + 'px');
         firework.style.setProperty('--ty', (y - centerY) + 'px');
-        
         document.body.appendChild(firework);
-        
         setTimeout(() => firework.remove(), 1500);
       }
     }
@@ -1218,32 +1257,23 @@
     function showAuraMessage() {
       const messageContainer = document.createElement('div');
       messageContainer.className = 'aura-message-container';
-      
       const message = document.createElement('div');
       message.className = 'aura-message';
       message.textContent = '🎆 GANHOU AURA 🎆';
-      
       messageContainer.appendChild(message);
       document.body.appendChild(messageContainer);
-      
       setTimeout(() => messageContainer.remove(), 3000);
     }
 
     function showAuraGif() {
       const gifContainer = document.createElement('div');
       gifContainer.className = 'aura-gif-container';
-      
       const img = document.createElement('img');
       img.src = 'https://media1.tenor.com/m/HHQnzUQZaNcAAAAd/67-67-meme.gif';
       img.alt = '67 Aura';
-      
       gifContainer.appendChild(img);
       document.body.appendChild(gifContainer);
-      
-      // Adicionar a classe 'show' para ativar a animação
       setTimeout(() => gifContainer.classList.add('show'), 10);
-      
-      // Remover após 4 segundos
       setTimeout(() => gifContainer.remove(), 4000);
     }
 
