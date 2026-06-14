@@ -1212,8 +1212,9 @@
     }
 
     function createFireworks() {
-      const colors = ['#ff1744', '#ff5252', '#ff6e40'];
-      for (let i = 0; i < 50; i++) {
+      // Cores: Vermelho Carmesim, Ciano Elétrico, Dourado Lendário e Branco Estelar
+      const colors = ['#ff1744', '#00d9ff', '#ffd700', '#ffffff'];
+      for (let i = 0; i < 60; i++) {
         setTimeout(() => {
           const firework = document.createElement('div');
           firework.className = 'firework';
@@ -1222,26 +1223,26 @@
           firework.style.left = x + 'px';
           firework.style.top = y + 'px';
           firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-          firework.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
-          firework.style.setProperty('--ty', (Math.random() * 200 - 100) + 'px');
+          firework.style.setProperty('--tx', (Math.random() * 300 - 150) + 'px');
+          firework.style.setProperty('--ty', (Math.random() * 300 - 150) + 'px');
           document.body.appendChild(firework);
           setTimeout(() => firework.remove(), 1500);
-        }, i * 50);
+        }, i * 40);
       }
-      for (let i = 0; i < 3; i++) {
-        setTimeout(() => createCentralFirework(), i * 300);
+      for (let i = 0; i < 4; i++) {
+        setTimeout(() => createCentralFirework(), i * 400);
       }
     }
 
     function createCentralFirework() {
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 3;
-      const colors = ['#ff1744', '#ff5252', '#ff6e40'];
-      for (let i = 0; i < 30; i++) {
+      const colors = ['#ff1744', '#00d9ff', '#ffd700', '#ffffff'];
+      for (let i = 0; i < 40; i++) {
         const firework = document.createElement('div');
         firework.className = 'firework-burst';
-        const angle = (i / 30) * Math.PI * 2;
-        const distance = 200;
+        const angle = (i / 40) * Math.PI * 2;
+        const distance = Math.random() * 100 + 200;
         const x = centerX + Math.cos(angle) * distance;
         const y = centerY + Math.sin(angle) * distance;
         firework.style.left = centerX + 'px';
