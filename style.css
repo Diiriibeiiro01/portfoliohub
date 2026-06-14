@@ -174,6 +174,11 @@ a {
   animation: logo-hologram 4s ease-in-out infinite;
 }
 
+body.aura-level-67 .logo {
+  animation: logo-hologram 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 60px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 120px rgba(127, 57, 251, 0.6)) drop-shadow(0 0 180px rgba(236, 72, 153, 0.4));
+}
+
 @keyframes logo-hologram {
   0%, 100% { 
     filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.5)) drop-shadow(0 0 60px rgba(127, 57, 251, 0.3));
@@ -240,6 +245,36 @@ a {
   filter: drop-shadow(0 0 40px rgba(0, 217, 255, 1)) drop-shadow(0 0 80px rgba(127, 57, 251, 0.6));
 }
 
+/* ===========================
+   AURA TOGGLE BUTTON
+=========================== */
+.aura-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--cyan);
+  padding: 8px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.4));
+  margin-right: 12px;
+}
+
+.aura-toggle:hover {
+  transform: scale(1.2) rotate(-15deg);
+  filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 60px rgba(127, 57, 251, 0.5));
+}
+
+.aura-toggle.aura-active {
+  animation: aura-bolt-pulse 0.5s ease-in-out;
+  filter: drop-shadow(0 0 60px rgba(0, 217, 255, 1)) drop-shadow(0 0 120px rgba(127, 57, 251, 0.8));
+}
+
+@keyframes aura-bolt-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4) rotate(20deg); }
+}
+
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -268,6 +303,197 @@ a {
 }
 
 .mobile-menu.open { display: flex; }
+
+/* ===========================
+   AURA LEVEL 67 - SOBRECARGA
+=========================== */
+body.aura-level-67 {
+  animation: aura-overload 0.3s ease-in-out;
+}
+
+@keyframes aura-overload {
+  0%, 100% { filter: brightness(1) contrast(1); }
+  50% { filter: brightness(1.3) contrast(1.2); }
+}
+
+body.aura-level-67::before {
+  animation: cosmic-pulse 8s ease-in-out infinite, aura-intensity 2s ease-in-out infinite !important;
+}
+
+@keyframes aura-intensity {
+  0%, 100% {
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(127, 57, 251, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.25) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 0, 110, 0.25) 0%, transparent 50%);
+  }
+  50% {
+    background: 
+      radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.5) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(127, 57, 251, 0.45) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.4) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.45) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 0, 110, 0.4) 0%, transparent 50%);
+  }
+}
+
+body.aura-level-67 .hero h1 .highlight {
+  animation: highlight-liquid 3s ease-in-out infinite !important;
+}
+
+body.aura-level-67 .section-title::after {
+  animation: title-glow-pulse 1s ease-in-out infinite;
+}
+
+@keyframes title-glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 40px rgba(0, 217, 255, 0.7), 0 0 80px rgba(127, 57, 251, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 80px rgba(0, 217, 255, 1), 0 0 160px rgba(127, 57, 251, 0.8);
+  }
+}
+
+body.aura-level-67 .btn-primary {
+  animation: button-energy-surge 1s ease-in-out infinite;
+}
+
+@keyframes button-energy-surge {
+  0%, 100% { 
+    box-shadow: 
+      0 0 60px rgba(0, 217, 255, 0.6),
+      0 0 120px rgba(127, 57, 251, 0.4),
+      0 20px 40px rgba(0, 217, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 0 120px rgba(0, 217, 255, 1),
+      0 0 200px rgba(127, 57, 251, 0.7),
+      0 30px 60px rgba(0, 217, 255, 0.6);
+  }
+}
+
+body.aura-level-67 .proj-card {
+  animation: card-energy-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes card-energy-pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 120px rgba(0, 217, 255, 0.4),
+      inset 0 0 50px rgba(0, 217, 255, 0.15);
+  }
+  50% { 
+    box-shadow: 
+      0 0 180px rgba(0, 217, 255, 0.7),
+      inset 0 0 50px rgba(0, 217, 255, 0.25);
+  }
+}
+
+body.aura-level-67 .avatar {
+  animation: float-transcendental 2s ease-in-out infinite, avatar-energy-burst 1s ease-in-out infinite;
+}
+
+@keyframes avatar-energy-burst {
+  0%, 100% { 
+    box-shadow: 
+      0 0 80px rgba(0, 217, 255, 0.7),
+      0 0 160px rgba(127, 57, 251, 0.5),
+      0 0 240px rgba(236, 72, 153, 0.3);
+  }
+  50% { 
+    box-shadow: 
+      0 0 150px rgba(0, 217, 255, 1),
+      0 0 250px rgba(127, 57, 251, 0.8),
+      0 0 350px rgba(236, 72, 153, 0.6);
+  }
+}
+
+/* Partículas de Aura */
+.aura-particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 1), rgba(127, 57, 251, 0.5));
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
+  pointer-events: none;
+  z-index: 999;
+  animation: float-particle 3s ease-in infinite;
+}
+
+@keyframes float-particle {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-100px) translateX(50px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) translateX(100px) scale(0);
+  }
+}
+
+/* Explosão de Aura */
+.aura-explosion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.8), transparent);
+  box-shadow: 0 0 100px rgba(0, 217, 255, 1), 0 0 200px rgba(127, 57, 251, 0.8);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 999;
+  animation: explosion-burst 1s ease-out forwards;
+}
+
+@keyframes explosion-burst {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    box-shadow: 0 0 100px rgba(0, 217, 255, 1), 0 0 200px rgba(127, 57, 251, 0.8);
+  }
+  100% {
+    width: 600px;
+    height: 600px;
+    opacity: 0;
+    box-shadow: 0 0 200px rgba(0, 217, 255, 0.5), 0 0 400px rgba(127, 57, 251, 0.3);
+  }
+}
+
+/* Glow do Mouse */
+.mouse-glow {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.6), transparent);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.8);
+  pointer-events: none;
+  z-index: 998;
+  animation: glow-fade 0.5s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes glow-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
 
 /* ===========================
    HERO - PURE ENERGY
