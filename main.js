@@ -1,53 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Menu mobile
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
+// Menu mobile
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-    });
-  }
-
-  // ===========================
-  // AURA LEVEL 67 - SOBRECARGA
-  // ===========================
-  const auraBtn = document.getElementById('auraBtn');
-  window.auraActive = false; // Tornar global para outras funções
-
-  if (auraBtn) {
-    auraBtn.addEventListener('click', () => {
-      window.auraActive = !window.auraActive;
-      
-      if (window.auraActive) {
-        document.body.classList.add('aura-level-67');
-        auraBtn.classList.add('aura-active');
-        
-        // Efeito visual de ativação
-        createAuraExplosion();
-        
-        // Fogos de artifício
-        createFireworks();
-        
-        // Mensagem de vitória
-        showAuraMessage();
-        
-        // Vibração do dispositivo (se suportado)
-        if (navigator.vibrate) {
-          navigator.vibrate([100, 50, 100, 50, 200, 50, 100]);
-        }
-      } else {
-        document.body.classList.remove('aura-level-67');
-        auraBtn.classList.remove('aura-active');
-      }
-    });
-  }
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
 });
 
 function closeMenu() {
-  const mobileMenu = document.getElementById('mobileMenu');
-  if (mobileMenu) mobileMenu.classList.remove('open');
+  mobileMenu.classList.remove('open');
 }
+
+// ===========================
+// AURA LEVEL 67 - SOBRECARGA
+// ===========================
+const auraBtn = document.getElementById('auraBtn');
+let auraActive = false;
+
+auraBtn.addEventListener('click', () => {
+  auraActive = !auraActive;
+  
+  if (auraActive) {
+    document.body.classList.add('aura-level-67');
+    auraBtn.classList.add('aura-active');
+    
+    // Efeito visual de ativação
+    createAuraExplosion();
+    
+    // Fogos de artifício
+    createFireworks();
+    
+    // Mensagem de vitória
+    showAuraMessage();
+    
+    // Vibração do dispositivo (se suportado)
+    if (navigator.vibrate) {
+      navigator.vibrate([100, 50, 100, 50, 200, 50, 100]);
+    }
+  } else {
+    document.body.classList.remove('aura-level-67');
+    auraBtn.classList.remove('aura-active');
+  }
+});
 
 // Função para criar explosão de aura
 function createAuraExplosion() {
@@ -144,7 +137,7 @@ function showAuraMessage() {
 
 // Criar partículas de aura flutuando
 function createAuraParticles() {
-  if (!window.auraActive) return;
+  if (!auraActive) return;
   
   const particle = document.createElement('div');
   particle.className = 'aura-particle';
@@ -159,7 +152,7 @@ function createAuraParticles() {
 
 // Gerar partículas continuamente quando aura está ativa
 setInterval(() => {
-  if (window.auraActive && Math.random() > 0.7) {
+  if (auraActive && Math.random() > 0.7) {
     createAuraParticles();
   }
 }, 300);
@@ -210,7 +203,7 @@ document.addEventListener('click', (e) => {
 
 // Efeito de glow ao mover o mouse (quando aura está ativa)
 document.addEventListener('mousemove', (e) => {
-  if (window.auraActive) {
+  if (auraActive) {
     const glow = document.createElement('div');
     glow.className = 'mouse-glow';
     glow.style.left = e.clientX + 'px';
@@ -227,7 +220,7 @@ document.addEventListener('mousemove', (e) => {
 let scrollCount = 0;
 window.addEventListener('scroll', () => {
   scrollCount++;
-  if (window.auraActive && scrollCount % 5 === 0) {
+  if (auraActive && scrollCount % 5 === 0) {
     createAuraParticles();
   }
 });

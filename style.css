@@ -496,126 +496,6 @@ body.aura-level-67 .avatar {
 }
 
 /* ===========================
-   FOGOS DE ARTIFÍCIO
-=========================== */
-.firework {
-  position: fixed;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-  box-shadow: 0 0 20px currentColor;
-  animation: firework-burst 1.5s ease-out forwards;
-}
-
-@keyframes firework-burst {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(
-      calc((var(--tx, 0px) - 0px) * 2),
-      calc((var(--ty, 0px) - 0px) * 2)
-    ) scale(0);
-  }
-}
-
-.firework-burst {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 999;
-  box-shadow: 0 0 25px currentColor;
-  animation: burst-explosion 1.5s ease-out forwards;
-}
-
-@keyframes burst-explosion {
-  0% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(0);
-  }
-}
-
-/* ===========================
-   MENSAGEM GANHOU AURA
-=========================== */
-.aura-message-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 10000;
-}
-
-.aura-message {
-  font-size: 72px;
-  font-weight: 900;
-  color: var(--text-primary);
-  text-align: center;
-  background: linear-gradient(135deg, #00d9ff 0%, #7f39fb 33%, #ec4899 66%, #ff006e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 
-    0 0 40px rgba(0, 217, 255, 0.8),
-    0 0 80px rgba(127, 57, 251, 0.6),
-    0 0 120px rgba(236, 72, 153, 0.4);
-  filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 80px rgba(127, 57, 251, 0.6));
-  animation: message-pop 3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  line-height: 1.2;
-}
-
-@keyframes message-pop {
-  0% {
-    opacity: 0;
-    transform: scale(0) rotate(-180deg);
-    filter: drop-shadow(0 0 0px rgba(0, 217, 255, 0));
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 0 60px rgba(0, 217, 255, 1)) drop-shadow(0 0 120px rgba(127, 57, 251, 0.8));
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 80px rgba(127, 57, 251, 0.6));
-  }
-  80% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 40px rgba(0, 217, 255, 0.8)) drop-shadow(0 0 80px rgba(127, 57, 251, 0.6));
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5) translateY(-100px);
-    filter: drop-shadow(0 0 0px rgba(0, 217, 255, 0));
-  }
-}
-
-/* ===========================
    HERO - PURE ENERGY
 =========================== */
 .hero {
@@ -1508,14 +1388,6 @@ body.aura-level-67 .avatar {
   .proj-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 }
 
-/* Responsivo para mensagem em mobile */
-@media (max-width: 768px) {
-  .aura-message {
-    font-size: 48px;
-    letter-spacing: 2px;
-  }
-}
-
 @media (max-width: 480px) {
   .hero h1 { font-size: 40px; }
   .hero-cards { grid-template-columns: 1fr; }
@@ -1529,8 +1401,4 @@ body.aura-level-67 .avatar {
   .section { padding: 80px 0; }
   .hero { padding: 120px 0 100px; }
   .section-title { font-size: 32px; }
-  .aura-message {
-    font-size: 36px;
-    letter-spacing: 1px;
-  }
 }
