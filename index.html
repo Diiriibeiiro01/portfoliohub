@@ -1287,12 +1287,19 @@
     function showAuraMessage() {
       const messageContainer = document.createElement('div');
       messageContainer.className = 'aura-message-container';
+      // Reposicionar para o topo para não cobrir o GIF
+      messageContainer.style.alignItems = 'flex-start';
+      messageContainer.style.paddingTop = '80px';
+      
       const message = document.createElement('div');
       message.className = 'aura-message';
-      message.textContent = '🎆 GANHOU AURA 🎆';
+      message.innerHTML = '⚡️ +1000 AURA ⚡️';
+      message.style.fontSize = '90px'; // Ainda maior
+      message.style.textShadow = '0 0 50px #ff1744, 0 0 100px #ff1744';
+      
       messageContainer.appendChild(message);
       document.body.appendChild(messageContainer);
-      setTimeout(() => messageContainer.remove(), 3000);
+      setTimeout(() => messageContainer.remove(), 5000);
     }
 
     function showAuraGif() {
@@ -1304,7 +1311,8 @@
       gifContainer.appendChild(img);
       document.body.appendChild(gifContainer);
       setTimeout(() => gifContainer.classList.add('show'), 10);
-      setTimeout(() => gifContainer.remove(), 8000);
+      // Aumentado para 12 segundos para cobrir toda a música
+      setTimeout(() => gifContainer.remove(), 12000);
     }
 
     // Contador animado
