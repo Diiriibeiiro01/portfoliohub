@@ -1294,8 +1294,10 @@
       const message = document.createElement('div');
       message.className = 'aura-message';
       message.innerHTML = '⚡️ +1000 AURA ⚡️';
-      message.style.fontSize = '90px'; // Ainda maior
-      message.style.textShadow = '0 0 50px #ff1744, 0 0 100px #ff1744';
+      message.style.fontSize = '80px'; 
+      message.style.textShadow = '0 0 20px rgba(255, 23, 68, 0.8), 0 0 40px rgba(255, 23, 68, 0.4)';
+      message.style.color = '#ffffff';
+      message.style.webkitTextStroke = '2px #ff1744';
       
       messageContainer.appendChild(message);
       document.body.appendChild(messageContainer);
