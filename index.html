@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PortfolioHUB · Mateus Vinicius</title>
+  <meta name="description" content="Portfólio de Mateus Vinicius — Estudante de Engenharia de Software, especialista em monitoramento de energia solar, Brasília-DF." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Portfolio<span>HUB</span></a>
+      <nav class="nav-links">
+        <a href="#projetos">projetos</a>
+        <a href="#sobre">sobre</a>
+        <a href="#contato">contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <i class="ti ti-menu-2"></i>
+      </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#projetos" onclick="closeMenu()">projetos</a>
+      <a href="#sobre" onclick="closeMenu()">sobre</a>
+      <a href="#contato" onclick="closeMenu()">contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tag">
+        <span class="dot"></span>
+        disponível para estágio
+      </div>
+      <h1>Olá, sou <span class="highlight">Mateus Vinicius</span> 👋</h1>
+      <p class="hero-sub">
+        <i class="ti ti-school"></i>
+        Estudante de Engenharia de Software
+      </p>
+      <p class="hero-desc">
+        Apaixonado por tecnologia e sustentabilidade. Trabalho com monitoramento de energia solar
+        e estou em busca de oportunidades para unir minha experiência no setor energético
+        com o desenvolvimento de soluções digitais inovadoras.
+      </p>
+
+      <div class="hero-cards">
+        <div class="hero-card">
+          <i class="ti ti-map-pin" style="color:#7F77DD"></i>
+          <span class="card-label">localização</span>
+          <span class="card-value">Brasília, DF</span>
+        </div>
+        <div class="hero-card">
+          <i class="ti ti-solar-panel" style="color:#BA7517"></i>
+          <span class="card-label">área de atuação</span>
+          <span class="card-value">Energia Solar</span>
+        </div>
+        <div class="hero-card">
+          <i class="ti ti-rocket" style="color:#1D9E75"></i>
+          <span class="card-label">disponibilidade</span>
+          <span class="card-value">Estágio CLT/PJ</span>
+        </div>
+      </div>
+
+      <div class="skills-row">
+        <span class="skill solar">Energia Solar</span>
+        <span class="skill solar">Monitoramento</span>
+        <span class="skill">HTML/CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Git &amp; GitHub</span>
+        <span class="skill">Google Gemini</span>
+        <span class="skill">Eng. de Software</span>
+      </div>
+
+      <div class="hero-btns">
+        <a href="#projetos" class="btn-primary">ver projetos</a>
+        <a href="#contato" class="btn-secondary">entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-n" id="countProjetos">0</span>
+        <span class="stat-l">projetos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n" id="countTechs">0</span>
+        <span class="stat-l">tecnologias</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">2026</span>
+        <span class="stat-l">em formação</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section class="section" id="projetos">
+    <div class="container">
+      <h2 class="section-title">projetos em destaque</h2>
+      <div class="proj-grid">
+
+        <div class="proj-card">
+          <div class="proj-thumb purple">
+            <i class="ti ti-code"></i>
+          </div>
+          <div class="proj-info">
+            <h3 class="proj-name">PortfolioHUB</h3>
+            <p class="proj-type">Aplicação Web</p>
+            <div class="proj-tags">
+              <span class="tag purple">HTML</span>
+              <span class="tag teal">CSS</span>
+              <span class="tag blue">GitHub</span>
+            </div>
+            <a href="https://github.com/seuusuario/portfoliohub" target="_blank" class="proj-link">
+              <i class="ti ti-brand-github"></i> ver no GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-thumb amber">
+            <i class="ti ti-solar-panel"></i>
+          </div>
+          <div class="proj-info">
+            <h3 class="proj-name">Monitor Solar</h3>
+            <p class="proj-type">Monitoramento de Energia</p>
+            <div class="proj-tags">
+              <span class="tag amber">IoT</span>
+              <span class="tag teal">Dados</span>
+            </div>
+            <a href="#" class="proj-link">
+              <i class="ti ti-brand-github"></i> ver no GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-thumb coral">
+            <i class="ti ti-school"></i>
+          </div>
+          <div class="proj-info">
+            <h3 class="proj-name">Projeto Acadêmico</h3>
+            <p class="proj-type">Eng. de Software</p>
+            <div class="proj-tags">
+              <span class="tag coral">Pesquisa</span>
+              <span class="tag purple">Docs</span>
+            </div>
+            <a href="#" class="proj-link">
+              <i class="ti ti-brand-github"></i> ver no GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="proj-card proj-add" id="addProject">
+          <i class="ti ti-plus"></i>
+          <span>adicionar projeto</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section section-alt" id="sobre">
+    <div class="container">
+      <h2 class="section-title">sobre mim</h2>
+      <div class="about">
+        <div class="avatar">MV</div>
+        <div class="about-text">
+          <h3>Mateus Vinicius</h3>
+          <p>
+            Estudante de Engenharia de Software em Brasília-DF, com experiência prática em
+            monitoramento de sistemas de energia solar. Tenho interesse em desenvolvimento web,
+            segurança da informação e inteligência artificial — áreas que estudo e aplico
+            em projetos pessoais e acadêmicos.
+          </p>
+          <p>
+            Atualmente utilizo ferramentas como Git, GitHub e Google Gemini para organizar
+            e potencializar meus projetos. Busco minha primeira oportunidade de estágio para
+            crescer profissionalmente e contribuir com equipes inovadoras.
+          </p>
+          <div class="skills-row" style="margin-top: 16px;">
+            <span class="skill solar">Energia Solar</span>
+            <span class="skill solar">Monitoramento</span>
+            <span class="skill">HTML/CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Git &amp; GitHub</span>
+            <span class="skill">Google Gemini</span>
+            <span class="skill">Eng. de Software</span>
+            <span class="skill">Segurança</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section" id="contato">
+    <div class="container">
+      <h2 class="section-title">contato</h2>
+      <p class="contact-desc">Quer conversar sobre projetos, estágio ou só trocar uma ideia? Me chama!</p>
+      <div class="contact-row">
+        <a href="https://github.com/seuusuario" target="_blank" class="contact-btn">
+          <i class="ti ti-brand-github"></i> GitHub
+        </a>
+        <a href="mailto:seuemail@email.com" class="contact-btn">
+          <i class="ti ti-mail"></i> E-mail
+        </a>
+        <a href="https://linkedin.com/in/seuusuario" target="_blank" class="contact-btn">
+          <i class="ti ti-brand-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <span>PortfolioHUB · Mateus Vinicius · Brasília, DF · 2026</span>
+      <a href="https://github.com/seuusuario/portfoliohub" target="_blank">
+        <i class="ti ti-brand-github"></i> ver no GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
